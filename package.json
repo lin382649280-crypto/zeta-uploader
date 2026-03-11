@@ -1,6 +1,6 @@
 {
   "name": "@wangyuanlin/zeta-uploader",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Resumable large file upload manager",
   "license": "MIT",
   "author": "wangyuanlin",
@@ -13,12 +13,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-name/your-repo.git",
+    "url": "https://github.com/lin382649280-crypto/zeta-uploader",
     "directory": "packages/ZetaUploader"
   },
-  "homepage": "https://github.com/your-name/your-repo#readme",
+  "homepage": "https://github.com/lin382649280-crypto/zeta-uploader",
   "bugs": {
-    "url": "https://github.com/your-name/your-repo/issues"
+    "url": "https://github.com/lin382649280-crypto/zeta-uploader"
   },
   "type": "module",
   "main": "dist/index.cjs",
@@ -38,10 +38,12 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --dts"
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "test": "vitest run"
   },
   "devDependencies": {
     "tsup": "^8.0.2",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "vitest": "^2.1.9"
   }
 }

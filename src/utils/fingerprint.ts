@@ -1,10 +1,14 @@
 ﻿import { FINGERPRINT_SAMPLE_BYTES } from '../constants';
 
+// ArrayBuffer 转 hex 字符串
 const toHex = (buffer: ArrayBuffer) =>
   Array.from(new Uint8Array(buffer))
     .map((item) => item.toString(16).padStart(2, '0'))
     .join('');
 
+// 生成文件指纹：
+// - 默认使用文件名/大小/类型/最后修改时间作为 fallback
+// - 若浏览器支持 crypto.subtle，则对采样内容做 SHA-256
 export const buildFileFingerprint = async (file: File) => {
   const fallback = `${file.name}|${file.size}|${file.type}|${file.lastModified}`;
   const subtle = typeof globalThis !== 'undefined' ? globalThis.crypto?.subtle : undefined;

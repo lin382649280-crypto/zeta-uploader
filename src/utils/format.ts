@@ -1,4 +1,5 @@
-﻿export const formatFileSize = (size: number) => {
+﻿// 将字节数格式化为易读的字符串
+export const formatFileSize = (size: number) => {
   const safeSize = Number(size || 0);
   if (safeSize <= 0) return '0 B';
   if (safeSize < 1024) return `${safeSize} B`;
